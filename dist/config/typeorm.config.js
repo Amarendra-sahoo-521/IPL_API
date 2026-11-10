@@ -28,7 +28,7 @@ exports.typeOrmAsyncConfig = {
             extra: {
                 charset: 'utf8mb4_unicode_ci',
             },
-            synchronize: true,
+            synchronize: false,
         };
     }
 };

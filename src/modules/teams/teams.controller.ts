@@ -55,8 +55,6 @@ export class TeamController{
         const decodedPath = decodeURIComponent(filePath);
         const fullPath = join(process.cwd(), decodedPath);
         
-        
-  
         if (!fs.existsSync(fullPath)) {
           throw new NotFoundException(`File not found: ${filePath}`);
         }
