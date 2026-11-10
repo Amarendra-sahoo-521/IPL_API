@@ -28,7 +28,7 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
-                envFilePath: [`.env.${process.env.NODE_ENV || 'development'}`]
+                envFilePath: [`.env.${process.env.NODE_ENV || 'dev'}`]
             }),
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: (0, path_1.join)(__dirname, "..", "uploads"),

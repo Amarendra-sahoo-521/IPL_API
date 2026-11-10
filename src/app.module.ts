@@ -16,7 +16,7 @@ import { PointsModule } from './modules/points/points.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: [`.env.${process.env.NODE_ENV || 'development'}`]
+      envFilePath: [`.env.${process.env.NODE_ENV || 'dev'}`]
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, "..", "uploads"),
