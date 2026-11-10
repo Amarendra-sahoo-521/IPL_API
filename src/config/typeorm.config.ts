@@ -2,16 +2,15 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModuleAsyncOptions, TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { glob } from "glob";
 import { join } from "path";
-import { MatchEntity } from "src/entities/match.entity";
 
-
-import {  playersEntity } from "src/entities/player.entity";
-import { PointEntity } from "src/entities/points.entity";
-import { TeamEntity } from "src/entities/team.entity";
-import { TeamLogoEntity } from "src/entities/teamLogo.entity";
 
 
 import { promisify } from "util";
+import { playersEntity } from "../entities/player.entity";
+import { TeamEntity } from "../entities/team.entity";
+import { TeamLogoEntity } from "../entities/teamLogo.entity";
+import { MatchEntity } from "../entities/match.entity";
+import { PointEntity } from "../entities/points.entity";
 const globPromise = promisify(glob);
 
 
@@ -30,6 +29,9 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
             return entityModule.default || entityModule; // Handle both ES and CommonJS modules
         }); */
 
+        // console.log("xxx--->", process.env.DB_HOST, process.env.DB_USERNAME, process.env.DB_NAME, process.env.DB_PASSWORD, process.env.DB_PORT);
+
+
         return {
             type: "mysql",
             host: process.env.DB_HOST || config.get<string>('DB_HOST'),
@@ -40,8 +42,12 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
             database: process.env.DB_NAME || config.get<string>('DB_NAME'),
             password: process.env.DB_PASSWORD || config.get<string>('DB_PASSWORD'),
             entities: [
-                playersEntity,TeamEntity,TeamLogoEntity,MatchEntity,PointEntity
+                playersEntity, TeamEntity, TeamLogoEntity, MatchEntity, PointEntity
             ],
+            ssl: {
+                minVersion: 'TLSv1.2',
+                rejectUnauthorized: true,
+            },
             extra: {
                 charset: 'utf8mb4_unicode_ci',
             },
