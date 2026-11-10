@@ -33,7 +33,25 @@ export class playersEntity{
     from: string;
 
     @Column()
+    debut_year: string;
+
+    @Column()
+    strike_rate: number;
+
+    @Column()
+    match_played: number;
+
+    @Column()
+    economy: string;
+
+    @Column()
     team_buy: number;
+
+    @Column()
+    runs: number;
+
+    @Column()
+    wickets: number;
 
     @Column({nullable :true})
     age: number;
@@ -44,7 +62,7 @@ export class playersEntity{
     @Column({
         type: "enum",
         enum: player_status,
-        comment: '0- written, 1- Buy'
+        comment: '1- Buy , 2- written'
     })
     status: number;
     

@@ -14,6 +14,8 @@ import { Repository } from "typeorm";
 import { join } from "path";
 import { Response } from 'express';
 import { playersEntity } from "src/entities/player.entity";
+import { FilterDTO } from "./filter.dto";
+import { playersUpdateDto } from "./playersUpdate.dto";
 
 export class FileUploadDto {
   @ApiProperty({ type: 'string', format: 'binary' })
@@ -31,17 +33,45 @@ export class playersController{
 
     @Get("all")
     @ApiOperation({ summary: "List All playerss" })
-    getAll(@Query() queryParams: PaginationSortingDTO){
+    getAll(@Query() queryParams: FilterDTO){
          return this.terminalService.findAll(queryParams);
     }
 
-
-    @Get("byname/:name")
-    @ApiOperation({ summary: "List playerss by name" })
-    getAllbyname(@Param('name') name:string,@Query() queryParams: PaginationSortingDTO){
-         return this.terminalService.findAllbyname(queryParams,name);
+    @Get("set_player_image")
+    @ApiOperation({ summary: "Set players image" })
+    getAlll(){
+         return this.terminalService.setimage();
     }
-   
+
+
+    // @Get("byname/:name")
+    // @ApiOperation({ summary: "List playerss by name" })
+    // getAllbyname(@Param('name') name:string,@Query() queryParams: PaginationSortingDTO){
+    //      return this.terminalService.findAllbyname(queryParams,name);
+    // }
+    
+    @Get('/top10')
+    // @UseGuards(JwtAuthGuard)
+    // @Roles(Role.ADMIN)
+    @ApiOperation({ summary: "List top players" })
+    findTop() {
+        return this.terminalService.findTop();
+    }
+
+    @Get('/orange_cap')
+    // @UseGuards(JwtAuthGuard)
+    // @Roles(Role.ADMIN)
+    @ApiOperation({ summary: "List top players" })
+    findTopruns() {
+        return this.terminalService.orangecap();
+    }
+    @Get('/purplecap')
+    // @UseGuards(JwtAuthGuard)
+    // @Roles(Role.ADMIN)
+    @ApiOperation({ summary: "List top players" })
+    findpurplecap() {
+        return this.terminalService.purplecap();
+    }
 
     @Get(":id")
     // @UseGuards(JwtAuthGuard)
@@ -50,6 +80,8 @@ export class playersController{
     findOne(@Param("id") id:number) {
         return this.terminalService.findOne(id);
     }
+
+    
 
     @Post("create")
     @ApiOperation({ summary: 'Create playerss' })
@@ -143,54 +175,10 @@ export class playersController{
     @Patch("update/:id")
     // @UseGuards(JwtAuthGuard)
     // @Roles(Role.ADMIN)
-    @UseInterceptors(
-      AnyFilesInterceptor({
-        storage: diskStorage({
-          destination: MulterHelper.destinationPath,
-          filename: MulterHelper.customFileName,
-        }),
-      })
-    )
-    @ApiConsumes('multipart/form-data')
-    @ApiBody({
-      schema: {
-        type: 'object',
-        properties: {
-          dtos: {
-            type: 'string',
-            description: 'JSON string of UserDocumentDto array',
-          },
-          'document_path': {
-            type: 'array',
-            items: {
-              type: 'string',
-              format: 'binary',
-            },
-          },
-        },
-      },
-    })
-    @ApiOperation({ summary: "Update players data" })
-    update(
-      @Param("id") id: string,
-      @Body() userDTO: any,
-      @UploadedFiles() files: Array<Express.Multer.File>
-    ) {
-     
-      if (!userDTO.dtos) {
-        throw new BadRequestException('No DTOs received. Make sure you are sending a "dtos" field.');
-      }
-    
-      let dtos: playersDto;
-      try {
-        dtos = JSON.parse(userDTO.dtos);
-      } catch (error) {
-        console.error('Error parsing dtos:', error);
-        throw new BadRequestException('Invalid JSON in dtos field. Please check the format.');
-      }
-       
-    
-      return this.terminalService.update(parseInt(id), dtos, files);
+    @ApiOperation({ summary: "Update menu" })
+    update(@Param("id") id: string, @Body()  DTO:playersUpdateDto) {
+ 
+        return this.terminalService.update(parseInt(id), DTO);
     }
     
 } 
