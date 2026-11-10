@@ -3,10 +3,10 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 
 import { playersController } from "./players.controller";
 import { playersService } from "./players.service";
-import { playersEntity } from "src/entities/player.entity";
-import { ExcelService } from "src/utils/globalServices/excel.service";
-import { TeamEntity } from "src/entities/team.entity";
-import { PointEntity } from "src/entities/points.entity";
+import { playersEntity } from"../../entities/player.entity";
+import { ExcelService } from"../../utils/globalServices/excel.service";
+import { TeamEntity } from"../../entities/team.entity";
+import { PointEntity } from"../../entities/points.entity";
 
 @ Module({
     imports: [

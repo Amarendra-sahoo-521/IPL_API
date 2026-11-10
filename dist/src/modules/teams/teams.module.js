@@ -9,11 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TeamModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const team_entity_1 = require("../../entities/team.entity");
 const teams_controller_1 = require("./teams.controller");
 const teams_service_1 = require("./teams.service");
 const teamLogo_entity_1 = require("../../entities/teamLogo.entity");
 const excel_service_1 = require("../../utils/globalServices/excel.service");
+const team_entity_1 = require("../../entities/team.entity");
 let TeamModule = class TeamModule {
 };
 exports.TeamModule = TeamModule;

@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from "@nestjs/swagger";
-import { Sorting } from "src/enums/common.enum";
+import { Sorting } from"../../enums/common.enum";
 
 export abstract class FilterDTO {
 

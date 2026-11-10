@@ -5,15 +5,15 @@ import * as fs from 'fs';
 import { playersDto } from "./players.dto";
 // import { FileUploadDto } from "../designation/designation.controller";
 import { AnyFilesInterceptor, FileInterceptor } from "@nestjs/platform-express";
-import { PaginationSortingDTO } from "src/utils/pagination.dto";
+import { PaginationSortingDTO } from"../../utils/pagination.dto";
 import { playersService } from "./players.service";
-import { MulterHelper } from "src/middlewires/multer.helper";
+import { MulterHelper } from"../../middlewires/multer.helper";
 import { InjectRepository } from "@nestjs/typeorm";
 
 import { Repository } from "typeorm";
 import { join } from "path";
 import { Response } from 'express';
-import { playersEntity } from "src/entities/player.entity";
+import { playersEntity } from"../../entities/player.entity";
 import { FilterDTO } from "./filter.dto";
 import { playersUpdateDto } from "./playersUpdate.dto";
 

@@ -1,8 +1,9 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 
-import { UserTypes } from "src/enums/user.enum";
+
 import * as crypto from 'crypto';
 import { getMetadataArgsStorage } from 'typeorm';
+import { UserTypes } from "../enums/user.enum";
 
 
 interface PaginationData {

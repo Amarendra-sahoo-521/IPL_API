@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.playersEntity = void 0;
-const common_enum_1 = require("../enums/common.enum");
 const typeorm_1 = require("typeorm");
+const common_enum_1 = require("../enums/common.enum");
 let playersEntity = class playersEntity {
 };
 exports.playersEntity = playersEntity;

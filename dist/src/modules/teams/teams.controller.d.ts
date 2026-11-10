@@ -1,8 +1,8 @@
 import { Repository } from "typeorm";
 import { Response } from 'express';
 import { TeamService } from "./teams.service";
-import { TeamEntity } from "src/entities/team.entity";
 import { teamDto } from "./teams.dto";
+import { TeamEntity } from "../../entities/team.entity";
 export declare class FileUploadDto {
     file: any;
 }

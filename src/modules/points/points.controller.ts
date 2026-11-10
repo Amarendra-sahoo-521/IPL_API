@@ -4,8 +4,6 @@ import { ApiBody, ApiConsumes, ApiOperation, ApiProperty, ApiTags } from "@nestj
 import { diskStorage } from 'multer';
 import * as fs from 'fs';
 import { AnyFilesInterceptor, FileInterceptor } from "@nestjs/platform-express";
-import { PaginationSortingDTO } from "src/utils/pagination.dto";
-import { MulterHelper } from "src/middlewires/multer.helper";
 import { join } from "path";
 import { Response } from 'express';
 import { PointsService } from "./points.service";

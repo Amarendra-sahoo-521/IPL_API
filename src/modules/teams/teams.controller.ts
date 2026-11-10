@@ -6,16 +6,15 @@ import * as fs from 'fs';
 
 // import { FileUploadDto } from "../designation/designation.controller";
 import { AnyFilesInterceptor, FileInterceptor } from "@nestjs/platform-express";
-import { PaginationSortingDTO } from "src/utils/pagination.dto";
-import { MulterHelper } from "src/middlewires/multer.helper";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { join } from "path";
 import { Response } from 'express';
 import { TeamService } from "./teams.service";
-import { TeamEntity } from "src/entities/team.entity";
 import * as mime from 'mime-types';
 import { teamDto } from "./teams.dto";
+import { TeamEntity } from "../../entities/team.entity";
+import { MulterHelper } from "../../middlewires/multer.helper";
 
 
 export class FileUploadDto {

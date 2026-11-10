@@ -34,9 +34,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.applySortingJoin = exports.applySorting = exports.applyPagination = exports.generateOtp = exports.email = exports.CreatedBy = exports.generatePassword = exports.getUserTypeName = void 0;
 const swagger_1 = require("@nestjs/swagger");
-const user_enum_1 = require("../enums/user.enum");
 const crypto = __importStar(require("crypto"));
 const typeorm_1 = require("typeorm");
+const user_enum_1 = require("../enums/user.enum");
 const getUserTypeName = (type) => {
     switch (type) {
         case user_enum_1.UserTypes.ADMIN:

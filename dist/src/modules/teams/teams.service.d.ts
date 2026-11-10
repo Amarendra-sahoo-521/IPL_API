@@ -1,8 +1,8 @@
-import { IResponse } from 'src/interfaces/api.response';
-import { ExcelService } from 'src/utils/globalServices/excel.service';
-import { TeamEntity } from 'src/entities/team.entity';
 import { Repository } from 'typeorm';
 import { teamDto } from './teams.dto';
+import { ExcelService } from '../../utils/globalServices/excel.service';
+import { TeamEntity } from '../../entities/team.entity';
+import { IResponse } from '../../interfaces/api.response';
 export declare class TeamService {
     private repository;
     private readonly excelService;

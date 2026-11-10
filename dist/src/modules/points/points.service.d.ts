@@ -1,7 +1,7 @@
-import { IResponse } from 'src/interfaces/api.response';
 import { Repository } from 'typeorm';
 import { PointsDto } from './points.dto';
-import { PointEntity } from 'src/entities/points.entity';
+import { PointEntity } from '../../entities/points.entity';
+import { IResponse } from '../../interfaces/api.response';
 export declare class PointsService {
     private repository;
     constructor(repository: Repository<PointEntity>);

@@ -1,7 +1,7 @@
 import { playersService } from "./players.service";
 import { Repository } from "typeorm";
 import { Response } from 'express';
-import { playersEntity } from "src/entities/player.entity";
+import { playersEntity } from "../../entities/player.entity";
 import { FilterDTO } from "./filter.dto";
 import { playersUpdateDto } from "./playersUpdate.dto";
 export declare class FileUploadDto {

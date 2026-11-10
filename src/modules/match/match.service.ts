@@ -5,22 +5,22 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DropdownType, IResponse } from 'src/interfaces/api.response';
+import { DropdownType, IResponse } from'../../interfaces/api.response';
 
-import Messages from 'src/constants/messages';
+import Messages from'../../constants/messages';
 
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
-import { applyPagination, applySorting } from 'src/utils/common';
+import { PaginationSortingDTO } from'../../utils/pagination.dto';
+import { applyPagination, applySorting } from'../../utils/common';
 
-import { ExcelService } from 'src/utils/globalServices/excel.service';
-import { TeamEntity } from 'src/entities/team.entity';
+import { ExcelService } from'../../utils/globalServices/excel.service';
+import { TeamEntity } from'../../entities/team.entity';
 import { FindOptionsWhere, Like, Repository } from 'typeorm';
-import { MatchEntity } from 'src/entities/match.entity';
-import { Team } from 'src/enums/common.enum';
-import { matchdetails } from 'src/utils/data/matchinfo';
+import { MatchEntity } from'../../entities/match.entity';
+import { Team } from'../../enums/common.enum';
+import { matchdetails } from'../../utils/data/matchinfo';
 import { MatchUpdateDto } from './matchUpdate.dto';
-import { PointEntity } from 'src/entities/points.entity';
-import { playersEntity } from 'src/entities/player.entity';
+import { PointEntity } from'../../entities/points.entity';
+import { playersEntity } from'../../entities/player.entity';
 
 @Injectable()
 export class MatchService {

@@ -9,9 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PointsModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const points_entity_1 = require("../../entities/points.entity");
 const points_controller_1 = require("./points.controller");
 const points_service_1 = require("./points.service");
+const points_entity_1 = require("../../entities/points.entity");
 let PointsModule = class PointsModule {
 };
 exports.PointsModule = PointsModule;

@@ -4,10 +4,10 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { MatchController } from "./match.controller";
 import { MatchService } from "./match.service";
 
-import { ExcelService } from "src/utils/globalServices/excel.service";
-import { TeamEntity } from "src/entities/team.entity";
-import { MatchEntity } from "src/entities/match.entity";
-import { PointEntity } from "src/entities/points.entity";
+import { ExcelService } from"../../utils/globalServices/excel.service";
+import { TeamEntity } from"../../entities/team.entity";
+import { MatchEntity } from"../../entities/match.entity";
+import { PointEntity } from"../../entities/points.entity";
 
 @ Module({
     imports: [

@@ -25,9 +25,9 @@ import {
 
 // import { FileUploadDto } from "../designation/designation.controller";
 import { AnyFilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
+import { PaginationSortingDTO } from '../../utils/pagination.dto';
 import { MatchService } from './match.service';
-import { MulterHelper } from 'src/middlewires/multer.helper';
+import { MulterHelper } from '../../middlewires/multer.helper';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { Repository } from 'typeorm';

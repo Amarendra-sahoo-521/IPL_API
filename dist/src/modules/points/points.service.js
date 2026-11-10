@@ -18,9 +18,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PointsService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const messages_1 = __importDefault(require("../../constants/messages"));
 const typeorm_2 = require("typeorm");
 const points_entity_1 = require("../../entities/points.entity");
+const messages_1 = __importDefault(require("../../constants/messages"));
 const team_entity_1 = require("../../entities/team.entity");
 let PointsService = class PointsService {
     constructor(repository) {

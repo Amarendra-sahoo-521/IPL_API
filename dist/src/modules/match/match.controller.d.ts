@@ -1,4 +1,4 @@
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
+import { PaginationSortingDTO } from '../../utils/pagination.dto';
 import { MatchService } from './match.service';
 import { MatchUpdateDto } from './matchUpdate.dto';
 export declare class FileUploadDto {

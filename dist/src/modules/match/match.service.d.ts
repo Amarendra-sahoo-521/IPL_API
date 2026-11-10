@@ -1,11 +1,11 @@
-import { IResponse } from 'src/interfaces/api.response';
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
-import { ExcelService } from 'src/utils/globalServices/excel.service';
-import { TeamEntity } from 'src/entities/team.entity';
+import { IResponse } from '../../interfaces/api.response';
+import { PaginationSortingDTO } from '../../utils/pagination.dto';
+import { ExcelService } from '../../utils/globalServices/excel.service';
+import { TeamEntity } from '../../entities/team.entity';
 import { Repository } from 'typeorm';
-import { MatchEntity } from 'src/entities/match.entity';
+import { MatchEntity } from '../../entities/match.entity';
 import { MatchUpdateDto } from './matchUpdate.dto';
-import { PointEntity } from 'src/entities/points.entity';
+import { PointEntity } from '../../entities/points.entity';
 export declare class MatchService {
     private repository;
     private PointRepository;

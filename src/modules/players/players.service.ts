@@ -5,26 +5,26 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DropdownType, IResponse } from 'src/interfaces/api.response';
+import { DropdownType, IResponse } from '../../interfaces/api.response';
 
-import Messages from 'src/constants/messages';
+import Messages from '../../constants/messages';
 
 import { playersDto } from './players.dto';
 
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
-import { applyPagination, applySorting } from 'src/utils/common';
-import { playersEntity } from 'src/entities/player.entity';
-import { ExcelService } from 'src/utils/globalServices/excel.service';
-import { TeamEntity } from 'src/entities/team.entity';
+import { PaginationSortingDTO } from '../../utils/pagination.dto';
+import { applyPagination, applySorting } from '../../utils/common';
+import { playersEntity } from '../../entities/player.entity';
+import { ExcelService } from '../../utils/globalServices/excel.service';
+import { TeamEntity } from '../../entities/team.entity';
 import { FindOptionsWhere, Like, Repository } from 'typeorm';
 import {
   playerdetails,
   debut_year,
   player_from,
-} from 'src/utils/data/playerinfo';
+} from '../../utils/data/playerinfo';
 import { FilterDTO } from './filter.dto';
-import { PointEntity } from 'src/entities/points.entity';
 import { playersUpdateDto } from './playersUpdate.dto';
+import { PointEntity } from '../../entities/points.entity';
 
 @Injectable()
 export class playersService {

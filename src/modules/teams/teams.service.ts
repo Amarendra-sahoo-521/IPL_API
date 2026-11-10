@@ -1,19 +1,13 @@
 import { BadRequestException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { DropdownType, IResponse } from 'src/interfaces/api.response';
-
-import Messages from 'src/constants/messages';
-
-
-
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
-import { applyPagination, applySorting } from 'src/utils/common';
-
-import { ExcelService } from 'src/utils/globalServices/excel.service';
-import { TeamEntity } from 'src/entities/team.entity';
 import { FindOptionsWhere, Like, Repository } from 'typeorm';
 import { teamDto } from './teams.dto';
-import { playersEntity } from 'src/entities/player.entity';
+import { playersEntity } from '../../entities/player.entity';
+import { ExcelService } from '../../utils/globalServices/excel.service';
+import { TeamEntity } from '../../entities/team.entity';
+import Messages from '../../constants/messages';
+import { IResponse } from '../../interfaces/api.response';
+
 
 
 

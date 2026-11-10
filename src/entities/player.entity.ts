@@ -1,5 +1,6 @@
-import { player_Role, player_status } from "src/enums/common.enum";
+
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { player_Role, player_status } from "../enums/common.enum";
 
 @Entity("players")
 export class playersEntity{

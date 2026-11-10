@@ -1,13 +1,13 @@
-import { IResponse } from 'src/interfaces/api.response';
+import { IResponse } from '../../interfaces/api.response';
 import { playersDto } from './players.dto';
-import { PaginationSortingDTO } from 'src/utils/pagination.dto';
-import { playersEntity } from 'src/entities/player.entity';
-import { ExcelService } from 'src/utils/globalServices/excel.service';
-import { TeamEntity } from 'src/entities/team.entity';
+import { PaginationSortingDTO } from '../../utils/pagination.dto';
+import { playersEntity } from '../../entities/player.entity';
+import { ExcelService } from '../../utils/globalServices/excel.service';
+import { TeamEntity } from '../../entities/team.entity';
 import { Repository } from 'typeorm';
 import { FilterDTO } from './filter.dto';
-import { PointEntity } from 'src/entities/points.entity';
 import { playersUpdateDto } from './playersUpdate.dto';
+import { PointEntity } from '../../entities/points.entity';
 export declare class playersService {
     private repository;
     private teamRepository;
